@@ -1,9 +1,20 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
 
-::github{repo="saicaca/fuwari"}
+Bennet Outland is a doctoral canidate at the University of Colorado Boulder in the Smead Department of Aerospace Engineering Sciences. His research main interests are in:
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+- Differential Game Theory
+- Safe Multi-agent Systems
+- Computational Astrodynamics
+
+Some projects that follow these research directions can be seen on his GitHub.
+
+::github{repo="BennetOutland"}
+
+
+His side hobbies are:
+
+- Vocal and Orchestral Music
+- Smart Home Configuration
+- Analytical Reformed Theology
+
+

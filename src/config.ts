@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "Ad Astra",
 	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th', 'vi'
 	themeColor: {
-		hue: 260, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 280, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
@@ -31,11 +31,11 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [
 		// Leave this array empty to use the default favicon
-		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		// }
+		{
+		   src: 'assets/favicon/favicon.png',    // Path of the favicon, relative to the /public directory
+		   // theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+		   // sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		}
 	],
 };
 
@@ -55,7 +55,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/headshot.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Bennet Outland",
-	bio: "Doctoral canidate at CU Boulder. Interested in differential game theory, astrodynamics, and space robotics.",
+	bio: "Ad astra per aspera et in omnibus rebus soli Deo gloria",
 	links: [
 		{
 			name: "GitHub",
