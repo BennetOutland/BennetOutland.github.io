@@ -42,6 +42,11 @@ export const siteConfig: SiteConfig = {
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
+		{
+			name: "Research",
+			url: "content/spec/research.md", // Internal links should not include the base path, as it is automatically added
+			external: false, // Show an external link icon and will open in a new tab
+		},
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
@@ -61,6 +66,11 @@ export const profileConfig: ProfileConfig = {
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/BennetOutland",
+		},
+		{
+			name: "Google Scholar",
+			icon: "fa6-brands:google-scholar",
+			url: "https://scholar.google.com/citations?user=PX-zoAMAAAAJ&hl=en",
 		},
 	],
 };
