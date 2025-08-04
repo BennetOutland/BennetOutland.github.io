@@ -2,7 +2,7 @@
 title: Post Title
 published: 20XX-XX-XX
 description: Lorem Ipsum
-tags: [1, 2, 3]
+tags: [template]
 category: Lorem
 draft: true
 ---
