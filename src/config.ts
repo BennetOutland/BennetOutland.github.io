@@ -44,11 +44,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
-		{
-			name: "Research",
-			url: "content/spec/research.md", // Internal links should not include the base path, as it is automatically added
-			external: false, // Show an external link icon and will open in a new tab
-		},
+		LinkPreset.Research,
 		{
 			name: "GitHub",
 			url: "https://github.com/BennetOutland", // Internal links should not include the base path, as it is automatically added
@@ -56,6 +52,12 @@ export const navBarConfig: NavBarConfig = {
 		},
 	],
 };
+
+// {
+// 	name: "Research",
+// 	url: "content/spec/research.md", // Internal links should not include the base path, as it is automatically added
+// 	external: false, // Show an external link icon and will open in a new tab
+// },
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/headshot.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
