@@ -1,6 +1,6 @@
 ---
 title: Gradient Descent Algorithms from Scratch
-published: 2025-XX-XX
+published: 2025-08-03
 description: Implementing many common gradient descent algorithms
 tags: [julia, optimization]
 category: Guides
