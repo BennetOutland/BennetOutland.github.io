@@ -4,7 +4,7 @@ published: 2099-01-01
 description: Random ideas collected...
 tags: [Ideas]
 category: Ideas
-draft: false
+draft: true
 ---
 
 # Ideas Board

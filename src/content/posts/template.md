@@ -1,6 +1,6 @@
 ---
 title: Post Title
-published: 20XX-XX-XX
+published: 2099-01-01
 description: Lorem Ipsum
 tags: [template]
 category: Lorem
