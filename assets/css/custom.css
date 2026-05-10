@@ -101,23 +101,47 @@ section, main, header, footer, nav {
 
 /* --- Whitespace reduction ----------------------------------- */
 
-/* Squeeze all block sections — this catches whatever Tailwind py-* class
-   HugoBlox happens to apply at build time */
+/* Vertical: squeeze all sections */
 section {
   padding-top: 1.25rem !important;
   padding-bottom: 1.25rem !important;
 }
 
-/* The bio/hero block gets a little more room */
 section:first-of-type {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
 }
 
-/* Kill any extra top/bottom margin on the block's inner container */
 section > div {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+/* Horizontal: widen the content area, reduce side gutters.
+   HugoBlox constrains content in a centered max-w container;
+   override that so content uses ~90% of the viewport. */
+section > div,
+.container,
+[class*="max-w-7xl"],
+[class*="max-w-6xl"],
+[class*="max-w-5xl"],
+[class*="max-w-4xl"] {
+  max-width: 1400px !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* On smaller screens keep a minimal gutter */
+@media (max-width: 768px) {
+  section > div,
+  .container,
+  [class*="max-w-7xl"],
+  [class*="max-w-6xl"],
+  [class*="max-w-5xl"],
+  [class*="max-w-4xl"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 /* --- Section titles ----------------------------------------- */
