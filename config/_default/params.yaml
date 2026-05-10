@@ -1,36 +1,46 @@
 hugoblox:
   schema: "2.0"
+
   identity:
     name: Bennet Outland
     type: person
     tagline: Graduate Researcher | CU Boulder
-    description: Bennet Outland is a doctoral student at the University of Colorado Boulder studying  Aerospace Engineering Sciences focusing on multi-agent spacecraft autonomy.
+    description: Bennet Outland is a doctoral student at the University of Colorado Boulder studying Aerospace Engineering Sciences focusing on multi-agent spacecraft autonomy.
+
   theme:
     mode: system
     pack: contrast
     colors:
-      primary: ""
+      primary: "sky"      # Aerospace sky-blue accent
       secondary: ""
-      neutral: ""
+      neutral: "slate"    # Technical, precise grays
+
   typography:
     font: sans
     size: md
+
   layout:
-    radius: md
+    radius: "sm"          # Crisp and precise
     spacing: comfortable
     avatar_shape: circle
+
   header:
     enable: true
     style: navbar-simple
     sticky: true
-    align: center
+    align: left
     search: true
     theme_toggle: true
+    theme_picker: false
+    language_switcher: false
+
   footer:
     style: minimal
-    language_switcher: true
+    language_switcher: false
+
   copyright:
     notice: © {year} {name}
+
   content:
     math:
       enable: true
@@ -40,7 +50,9 @@ hugoblox:
       enable: true
     citations:
       style: ieee
+
   search:
     enable: true
+
   privacy:
     enable: true
