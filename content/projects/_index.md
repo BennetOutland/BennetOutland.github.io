@@ -1,14 +1,27 @@
 ---
-title: 'Projects'
+title: Projects
 date: 2024-05-19
 type: landing
 
-# Page sections
+design:
+  spacing: '4rem'
+
 sections:
+
+  - block: markdown
+    content:
+      title: Projects
+      subtitle: ''
+      text: |-
+        Software, simulations, and side projects — things I've built to explore an idea
+        or solve a concrete problem. Some are research tools; others are just interesting.
+        [Add anything specific you want to highlight here.]
+    design:
+      columns: '1'
+
   - block: collection
     content:
-      title: Selected Projects
-      text: I enjoy making things. Here are a selection of projects that I have worked on over the years.
+      title: ''
       filters:
         folders:
           - projects
