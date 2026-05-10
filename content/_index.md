@@ -10,8 +10,8 @@ sections:
       username: me
       text: ''
       button:
-        text: Download CV
-        url: uploads/resume.pdf
+        text: View CV
+        url: /cv/
       headings:
         about: ''
         education: ''

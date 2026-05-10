@@ -221,8 +221,8 @@ a:not([class]) {
 
 .pub-list-item {
   text-align: center;
-  font-size: 1rem !important;
-  padding: 1.25rem 0 !important;
+  font-size: 1.05rem !important;
+  padding: 0.75rem 0 !important;
   margin-bottom: 0 !important;        /* override the inline margin-bottom: 1rem */
   border-bottom: 1px solid rgba(100, 116, 139, 0.12);
 }
@@ -234,14 +234,14 @@ a:not([class]) {
 /* Author names */
 .pub-list-item .article-metadata,
 .pub-list-item .li-cite-author {
-  font-size: 1rem !important;
+  font-size: 1.05rem !important;
   opacity: 1;
   letter-spacing: normal;
 }
 
 /* Title link */
 .pub-list-item > a {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -253,7 +253,43 @@ a:not([class]) {
 /* Button row — center it */
 .pub-list-item .flex.flex-wrap {
   justify-content: center !important;
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+/* Topic tag badges */
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.pub-tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(56, 189, 248, 0.1);
+  color: rgb(56, 189, 248);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  text-decoration: none !important;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.pub-tag:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+.dark .pub-tag {
+  background: rgba(56, 189, 248, 0.08);
+  color: rgb(125, 211, 252);
+  border-color: rgba(56, 189, 248, 0.2);
 }
 
 /* --- Footer ------------------------------------------------- */

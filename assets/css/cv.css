@@ -1,0 +1,262 @@
+/* ═══════════════════════════════════════════════════════════
+   CV PAGE — print-ready academic curriculum vitae
+   Matches the Awesome-CV LaTeX style from the PDF
+   ═══════════════════════════════════════════════════════════ */
+
+.cv-body {
+  font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: #333;
+  background: #d8d8d8;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Toolbar (screen-only) ──────────────────────── */
+
+.cv-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 2rem;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.cv-back {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.cv-back:hover { color: #fff; }
+
+.cv-print-btn {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: rgb(56, 189, 248);
+  padding: 0.35rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+.cv-print-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+}
+
+/* ─── Paper ──────────────────────────────────────── */
+
+.cv-paper {
+  max-width: 8.5in;
+  margin: 1.5rem auto 3rem;
+  background: #fff;
+  padding: 0.8in 0.85in 0.9in;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* ─── Name ───────────────────────────────────────── */
+
+.cv-name {
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.25rem;
+}
+
+/* ─── Contact bar ────────────────────────────────── */
+
+.cv-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.75rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #555;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.5px solid #ccc;
+}
+
+.cv-contact a {
+  color: #555;
+  text-decoration: none;
+}
+
+.cv-contact a:hover { color: #1e3a6e; }
+
+/* ─── Section headings ───────────────────────────── */
+
+.cv-paper h2 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1e3a6e;
+  margin: 1.35rem 0 0.35rem;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #1e3a6e;
+}
+
+/* ─── Entry block ────────────────────────────────── */
+
+.cv-entry {
+  margin-bottom: 0.7rem;
+}
+
+.cv-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.cv-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111;
+  flex: 1;
+}
+
+.cv-date {
+  font-style: italic;
+  font-size: 0.84rem;
+  color: #666;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cv-institution {
+  font-variant: small-caps;
+  font-size: 0.87rem;
+  color: #444;
+}
+
+/* ─── Bullets ────────────────────────────────────── */
+
+.cv-entry ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.91rem;
+}
+
+.cv-entry li {
+  margin-bottom: 0.08rem;
+  line-height: 1.45;
+}
+
+/* ─── Paragraph text (research interests) ───────── */
+
+.cv-paragraph {
+  font-size: 0.93rem;
+  line-height: 1.55;
+  text-align: justify;
+  margin: 0.25rem 0;
+}
+
+/* ─── Two-column list (teaching interests, courses) */
+
+.cv-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.05rem 1.5rem;
+  font-size: 0.91rem;
+  margin: 0.25rem 0;
+  padding-left: 1.25rem;
+}
+
+.cv-two-col li {
+  list-style: disc;
+  line-height: 1.4;
+}
+
+/* ─── Skills table ───────────────────────────────── */
+
+.cv-skills {
+  width: 100%;
+  font-size: 0.89rem;
+  border-collapse: collapse;
+  margin: 0.2rem 0;
+}
+
+.cv-skills td {
+  padding: 0.14rem 0;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.cv-skills td:first-child {
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 1.1rem;
+  width: 30%;
+  color: #222;
+}
+
+/* ─── Honors / simple two-col rows ──────────────── */
+
+.cv-honors {
+  font-size: 0.91rem;
+}
+
+.cv-honors .cv-entry {
+  margin-bottom: 0.4rem;
+}
+
+/* ─── References grid ────────────────────────────── */
+
+.cv-refs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 2.5rem;
+  font-size: 0.87rem;
+  margin-top: 0.3rem;
+}
+
+.cv-ref-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.cv-ref-block {
+  line-height: 1.45;
+}
+
+/* ─── Print ──────────────────────────────────────── */
+
+@media print {
+  .cv-toolbar { display: none !important; }
+
+  .cv-body {
+    background: #fff;
+    font-size: 10pt;
+  }
+
+  .cv-paper {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .cv-paper h2 { page-break-after: avoid; }
+  .cv-entry     { page-break-inside: avoid; }
+  .cv-refs      { page-break-inside: avoid; }
+
+  @page {
+    margin: 0.65in 0.75in;
+    size: letter portrait;
+  }
+}

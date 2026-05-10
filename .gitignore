@@ -68,3 +68,6 @@ Desktop.ini
 *.log
 npm-debug.log*
 *.deb
+
+
+.claude/

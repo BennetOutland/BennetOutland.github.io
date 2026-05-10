@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bennet Outland — Curriculum Vitae</title>
+  {{ $css := resources.Get "css/cv.css" }}
+  {{ with $css }}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="cv-body">
+
+<div class="cv-toolbar no-print">
+  <a class="cv-back" href="/">← Back to site</a>
+  <button class="cv-print-btn" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+
+{{ $me := index hugo.Data.authors "me" }}
+{{ $pubs     := (where site.Pages "Section" "publications").ByDate.Reverse }}
+{{ $events   := (where site.Pages "Section" "events").ByDate.Reverse }}
+{{ $projects := (where site.Pages "Section" "projects").ByDate.Reverse }}
+
+{{/* Split events into forthcoming (future) and past */}}
+{{ $forthcoming_talks := slice }}
+{{ $past_talks := slice }}
+{{ range $events }}
+  {{ if ge .Date now }}
+    {{ $forthcoming_talks = $forthcoming_talks | append . }}
+  {{ else }}
+    {{ $past_talks = $past_talks | append . }}
+  {{ end }}
+{{ end }}
+
+<main class="cv-paper">
+
+  {{/* ── Name ─────────────────────────────── */}}
+  <div class="cv-name">{{ $me.name.display }}</div>
+  <div class="cv-contact">
+    {{ with $me.website }}<a href="{{ . }}">{{ . | strings.TrimPrefix "https://" }}</a><span>|</span>{{ end }}
+    {{ with $me.github }}<a href="{{ . }}">{{ . | strings.TrimPrefix "https://github.com/" | printf "github.com/%s" }}</a><span>|</span>{{ end }}
+    {{ with $me.linkedin }}<a href="{{ . }}">{{ . | strings.TrimPrefix "https://www.linkedin.com/in/" | printf "linkedin.com/in/%s" }}</a><span>|</span>{{ end }}
+    {{ with $me.scholar }}<a href="{{ . }}">Google Scholar</a>{{ end }}
+  </div>
+
+  {{/* ── Education ────────────────────────── */}}
+  <h2>Education</h2>
+  {{ range $me.education }}
+  {{ $start := "" }}{{ with .start }}{{ $start = (time .).Format "2006" }}{{ end }}
+  {{ $end := "Current" }}{{ with .end }}{{ $end = (time .).Format "2006" }}{{ end }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .degree }}</span>
+      <span class="cv-date">{{ if eq $end "Current" }}Current{{ else }}{{ $end }}{{ end }}</span>
+    </div>
+    <div class="cv-row">
+      <span class="cv-institution">{{ .institution }}</span>
+    </div>
+    {{ with .summary }}<div class="cv-entry-detail">{{ . }}</div>{{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ── Research Interests ───────────────── */}}
+  <h2>Research Interests</h2>
+  <p class="cv-paragraph">{{ $me.research_interests }}</p>
+
+  {{/* ── Journal Publications ─────────────── */}}
+  {{ $journal_pubs := where $pubs "Params.publication_types" "intersect" (slice "article-journal") }}
+  {{ if $journal_pubs }}
+  <h2>Forthcoming Journal Publications</h2>
+  {{ range $journal_pubs }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .Title }}</span>
+      <span class="cv-date">{{ with .Params.publication }}{{ . | markdownify }}{{ end }}</span>
+    </div>
+    <div class="cv-institution">
+      {{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<strong>B Outland</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
+    </div>
+    {{ with .Params.abstract }}<ul><li>{{ . }}</li></ul>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Forthcoming Conference Publications ─ */}}
+  {{ if $forthcoming_talks }}
+  <h2>Forthcoming Conference Publications</h2>
+  {{ range $forthcoming_talks }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .Title }}</span>
+      <span class="cv-date">Forthcoming, {{ .Date.Format "2006" }}</span>
+    </div>
+    <div class="cv-institution">
+      {{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<strong>B Outland</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
+    </div>
+    {{ with .Params.abstract }}<ul><li>{{ . }}</li></ul>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Conference Presentations ─────────── */}}
+  {{ if $past_talks }}
+  <h2>Conference Presentations</h2>
+  {{ range $past_talks }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .Title }}</span>
+      <span class="cv-date">{{ .Date.Format "2006" }}</span>
+    </div>
+    <div class="cv-institution">
+      {{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<strong>B Outland</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
+    </div>
+    <ul>
+      {{ with .Params.event }}<li>{{ . }}</li>{{ end }}
+      {{ with .Params.summary }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Honors ───────────────────────────── */}}
+  {{ with $me.honors }}
+  <h2>Honors</h2>
+  <div class="cv-honors">
+    {{ range . }}
+    <div class="cv-entry">
+      <div class="cv-row">
+        <span class="cv-title">{{ .title }}</span>
+        <span class="cv-date">{{ .date }}</span>
+      </div>
+      <div class="cv-institution">{{ .subtitle }}</div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ── Awards ───────────────────────────── */}}
+  {{ with $me.awards_cv }}
+  <h2>Awards</h2>
+  {{ range . }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .title }}</span>
+      <span class="cv-date">{{ .date }}</span>
+    </div>
+    <div class="cv-institution">{{ .subtitle }}</div>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Academic Service ─────────────────── */}}
+  {{ with $me.academic_service }}
+  <h2>Academic Service</h2>
+  {{ range . }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .title }}</span>
+      <span class="cv-date">{{ .date }}</span>
+    </div>
+    <div class="cv-institution">{{ .org }}</div>
+    {{ with .bullets }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Experience ───────────────────────── */}}
+  {{ with $me.experience }}
+  <h2>Experience</h2>
+  {{ range . }}
+  {{ $start := "" }}{{ with .start }}{{ $start = (time .).Format "January 2006" }}{{ end }}
+  {{ $end := "Current" }}{{ with .end }}{{ $end = (time .).Format "January 2006" }}{{ end }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .org }}</span>
+      <span class="cv-date">{{ $start }} – {{ $end }}</span>
+    </div>
+    <div class="cv-institution">{{ .role }}</div>
+    {{ with .summary }}<ul>{{ range (split . "\n") }}{{ if . }}<li>{{ . }}</li>{{ end }}{{ end }}</ul>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Projects ─────────────────────────── */}}
+  {{ if $projects }}
+  <h2>Projects</h2>
+  {{ range $projects }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .Title }}</span>
+      <span class="cv-date">{{ .Date.Format "2006" }}</span>
+    </div>
+    {{ with .Params.summary }}<div class="cv-institution">{{ . }}</div>{{ end }}
+    {{ $body := .Plain | strings.TrimSpace }}
+    {{ if $body }}
+    <ul>
+      {{ range (split $body "\n") }}
+      {{ $line := strings.TrimLeft "- •* " . | strings.TrimSpace }}
+      {{ if and $line (not (strings.HasPrefix $line "#")) }}
+      <li>{{ $line }}</li>
+      {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Teaching ─────────────────────────── */}}
+  {{ with $me.teaching }}
+  <h2>Teaching and Advising Experience</h2>
+  {{ range . }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .role }}</span>
+      <span class="cv-date">{{ .date }}</span>
+    </div>
+    <div class="cv-institution">{{ .org }}</div>
+    {{ with .bullets }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Teaching Interests ───────────────── */}}
+  {{ with $me.teaching_interests }}
+  <h2>Teaching Interests</h2>
+  <ul class="cv-two-col">
+    {{ range . }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  {{ end }}
+
+  {{/* ── Courses ──────────────────────────── */}}
+  {{ with $me.courses }}
+  <h2>Courses and Topics</h2>
+  <ul class="cv-two-col">
+    {{ range . }}<li>{{ . }}</li>{{ end }}
+  </ul>
+  <p style="font-size:0.82rem;color:#666;margin-top:0.3rem;">* In Progress</p>
+  {{ end }}
+
+  {{/* ── Skills ───────────────────────────── */}}
+  {{ with $me.skills_cv }}
+  <h2>Skills</h2>
+  <table class="cv-skills">
+    {{ range . }}
+    <tr>
+      <td>{{ .category }}</td>
+      <td>{{ .items }}</td>
+    </tr>
+    {{ end }}
+  </table>
+  {{ end }}
+
+</main>
+</body>
+</html>

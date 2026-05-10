@@ -15,6 +15,10 @@ bio: "Doctoral student at the University of Colorado Boulder, Smead Department o
 affiliations:
   - name: "University of Colorado Boulder"
     url: ""
+website: "https://bennetout.land"
+github: "https://github.com/BennetOutland"
+linkedin: "https://www.linkedin.com/in/bennet-outland"
+scholar: "https://scholar.google.com/citations?user=PX-zoAMAAAAJ"
 links:
   - icon: "brands/github"
     url: "https://github.com/BennetOutland"
@@ -65,6 +69,17 @@ experience:
     end: "2025-05-01"
     summary: |
       TA for Programming for Engineers and Scientists (CSC 115 and CSC 170). Ran help sessions, wrote exam questions, and graded assignments.
+  - role: "Undergraduate Outreach"
+    org: "Department Outreach — South Dakota Mines"
+    start: "2022-01-01"
+    summary: |
+      Organized department admission events for the EECS Department. Created reinforcement learning control, deep computer vision, and autonomous vehicle demonstrations tailored for general audiences.
+  - role: "Volunteer Summer Intern"
+    org: "South Dakota Mines — Sanford Underground Research Facility (SURF)"
+    start: "2018-06-01"
+    end: "2019-08-01"
+    summary: |
+      Assisted in the development of Radon mitigation systems for SURF. Researched Radon content trapped on materials to reduce exposure to the LUX Dark Matter detector. Participated in clean room work and preparation to transport systems to SURF.
 skills:
   - name: Programming
     items:
@@ -118,3 +133,125 @@ awards:
     date: "2023-01-01"
     summary: "National engineering honor society."
     icon: "hero/academic-cap"
+
+research_interests: >
+  My research interests are in nonlinear dynamical systems and the control of agents within such systems.
+  Some of the fundamental research challenges that I am interested in are: denoising diffusion control,
+  stochastic trajectory optimization, stability analysis, controlling objects in hypersonic rarefied flow,
+  performing autonomous proximity operations with interacting fluid boundary layers or under chaotic dynamics,
+  system identification for feedback control systems, and explainable nonlinear controllers. Specifically,
+  this can be applied to cases of chaotic gravitational flow fields, such as cislunar space, combined drag
+  and gravitational effects of spacecraft in very low Earth orbit (VLEO), and the control of unmanned
+  undersea vehicles (UUVs) in turbulent waters. I also have experience in deep computer vision and signal
+  processing for space situational awareness as well as general data analysis and simulation for
+  investigating the stability of planetary systems.
+
+honors:
+  - title: "Outstanding Senior Award"
+    subtitle: "Second Year Recipient"
+    date: "2024"
+  - title: "Outstanding Senior Award"
+    subtitle: "Recipient"
+    date: "2023"
+  - title: "Dean's List"
+    subtitle: "All Pure Undergraduate Semesters"
+    date: "2021–2023"
+  - title: "Tau Beta Pi"
+    subtitle: "South Dakota Alpha Chapter Member"
+    date: "2023–Current"
+  - title: "National Society of Leadership and Success"
+    subtitle: "Member"
+    date: "2022–Current"
+
+awards_cv:
+  - title: "Senior Design CRADA"
+    subtitle: "$5,000 for the development of a customizable omnicopter, report with theoretical underpinnings, and design of a novel control algorithm."
+    date: "2023–2024"
+  - title: "DoD SMART Scholarship for Service Award Extension"
+    subtitle: "≈ $45,000 Award Adjustment for pursuing a Master of Science in Computer Science and Engineering"
+    date: "2022"
+  - title: "DoD SMART Scholarship for Service"
+    subtitle: "≈ $98,000 Award for pursuing a Bachelor of Science in Mechanical Engineering"
+    date: "2022"
+
+academic_service:
+  - title: "ME Faculty Search Committee"
+    org: "South Dakota Mines"
+    date: "2023–2024"
+    bullets:
+      - "Equal member of a faculty search and selection committee for tenure track and non-tenure track positions"
+      - "Vetted prospective faculty applications and conducted interviews with prospective faculty"
+      - "Scrutinized faculty research and teaching capabilities during in-person interviews"
+      - "Assisted in determining if candidates were acceptable or not acceptable to hire"
+  - title: "EECS Department Admissions Events"
+    org: "South Dakota Mines"
+    date: "2021–2022"
+    bullets:
+      - "Volunteered and helped coordinate admission events for the Electrical Engineering and Computer Science department"
+      - "Assisted in or gave demonstrations on computer vision and reinforcement learning"
+      - "Hired afterward to plan and occasionally execute these events as well as create new demonstrations"
+
+teaching:
+  - role: "Graduate Teaching Assistant"
+    org: "South Dakota Mines"
+    date: "2023–2025"
+    bullets:
+      - "Assist students in the Programming for Engineers and Scientists courses (CSC 115 and CSC 170)"
+      - "Run student help sessions, write exam questions, and grade assignments"
+  - role: "Research Co-Mentor"
+    org: "Ohrtman"
+    date: "2023–Current"
+    bullets:
+      - "Assisting in teaching/mentoring a student in programming, data analysis, data visualization, and astrodynamics"
+
+teaching_interests:
+  - "Dynamics"
+  - "Numerical Analysis"
+  - "Introduction to Control Systems"
+  - "Spaceflight Mechanics"
+  - "Dynamic Systems"
+  - "Programming for Engineers"
+
+courses:
+  - "Mechatronics"
+  - "Space Flight Mechanics"
+  - "Dynamic Systems"
+  - "Feedback Controls"
+  - "Thermo-Fluid Dynamics"
+  - "Linear Systems Theory"
+  - "Differential Equations"
+  - "Classical (Lagrangian and Quantum) Mechanics *"
+  - "Probability and Statistics"
+  - "Computations in Transport Phenomenon *"
+  - "Multivariate Calculus"
+  - "Linear Algebra"
+  - "Numerical Analysis"
+  - "Partial Differential Equations"
+  - "Data Structures"
+  - "Real Analysis"
+  - "Introduction to Robotics"
+  - "Tensor Calculus *"
+  - "Survey of Neural Networks"
+  - "Functional Analysis *"
+
+skills_cv:
+  - category: "Programming (Advanced)"
+    items: "Python, Julia, C++"
+  - category: "Programming (Intermediate)"
+    items: "Matlab, R, C, HTML/CSS"
+  - category: "Data Science"
+    items: "NumPy, Pandas, Sci-Kit Learn, Tensorflow, Flux.jl, PyTorch, MLPack, SciML Suite"
+  - category: "Autonomous Systems"
+    items: "Mobile Ground, UAV, UUV, Spacecraft"
+  - category: "Robotics Software/Hardware"
+    items: "ROS, Autopilot, OpenCV, 0MQ, FreeCAD, Jetson Nano, Raspberry Pi, Arduino, LIDAR, GPS"
+  - category: "Simulation Suites"
+    items: "Gazebo, Basilisk, Rebound, Unity"
+  - category: "Linux Operating Systems"
+    items: "Experienced with Debian and Arch derivatives for computational research and daily personal use"
+  - category: "Office Programs"
+    items: "LaTeX, Excel, Word, PowerPoint, Writer, Calc, Impress"
+  - category: "Speaking"
+    items: "Experienced technical presenter"
+  - category: "Foreign Language"
+    items: "Spanish (Intermediate)"

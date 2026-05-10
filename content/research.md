@@ -56,15 +56,7 @@ sections:
     design:
       columns: '1'
 
-  - block: collection
-    content:
-      title: ''
-      filters:
-        folders:
-          - publications
-        tag: differential-game-theory
-    design:
-      view: citation
+  # DGT collection block intentionally omitted until publications exist with tag: differential-game-theory
 
   # ── Computational Astrodynamics ───────────────────────────────────────────
   - block: markdown

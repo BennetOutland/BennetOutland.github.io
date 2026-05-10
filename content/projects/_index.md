@@ -20,6 +20,7 @@ sections:
   - block: collection
     content:
       title: ''
+      count: 0
       filters:
         folders:
           - projects
