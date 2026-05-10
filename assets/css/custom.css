@@ -117,30 +117,42 @@ section > div {
   margin-bottom: 0 !important;
 }
 
-/* Horizontal: widen the content area, reduce side gutters.
-   HugoBlox constrains content in a centered max-w container;
-   override that so content uses ~90% of the viewport. */
+/* Horizontal: make everything full-width with a fixed side gutter.
+   Three layers need overriding:
+   1. The outer section
+   2. Any max-w-* container div inside it
+   3. The Tailwind Typography `prose` max-width (65ch by default) */
+
+section,
 section > div,
-.container,
-[class*="max-w-7xl"],
-[class*="max-w-6xl"],
-[class*="max-w-5xl"],
-[class*="max-w-4xl"] {
-  max-width: 1400px !important;
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
+section > div > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
 }
 
-/* On smaller screens keep a minimal gutter */
+section {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+/* Prevent inner divs from adding padding on top of the section gutter */
+section > div {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Prose (Tailwind Typography) caps line length at 65ch — remove that cap */
+.prose,
+.prose-lg,
+[class*="prose"] {
+  max-width: 100% !important;
+}
+
 @media (max-width: 768px) {
-  section > div,
-  .container,
-  [class*="max-w-7xl"],
-  [class*="max-w-6xl"],
-  [class*="max-w-5xl"],
-  [class*="max-w-4xl"] {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+  section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
 }
 
