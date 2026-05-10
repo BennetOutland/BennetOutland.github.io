@@ -99,6 +99,39 @@ section, main, header, footer, nav {
   z-index: 1;
 }
 
+/* --- Whitespace reduction ----------------------------------- */
+/* HugoBlox's default block padding is generous; pull it in. */
+
+/* Top-level section vertical padding */
+section.hb-section,
+[class*="py-16"],
+[class*="py-20"],
+[class*="py-24"] {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* First section (hero/bio) — less top padding since nav is above it */
+section:first-of-type {
+  padding-top: 1rem !important;
+}
+
+/* Block inner containers */
+[class*="mx-auto"][class*="max-w"] {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Reduce the gap between section heading and its content */
+.hb-section > * + * {
+  margin-top: 1rem;
+}
+
+/* Tighten h2 top margin in content blocks */
+section h2 {
+  margin-top: 0.5rem;
+}
+
 /* --- Section titles ----------------------------------------- */
 /* Clean rule under section headings */
 section h2 {

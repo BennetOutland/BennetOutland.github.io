@@ -21,7 +21,7 @@ hugoblox:
 
   layout:
     radius: "sm"          # Crisp and precise
-    spacing: comfortable
+    spacing: compact
     avatar_shape: circle
 
   header:

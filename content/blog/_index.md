@@ -3,7 +3,7 @@ title: Updates
 type: landing
 
 design:
-  spacing: '4rem'
+  spacing: '2rem'
 
 sections:
 
