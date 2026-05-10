@@ -175,7 +175,32 @@ a:not([class]) {
 }
 
 /* --- Cards --------------------------------------------------- */
-/* Slightly reduce default rounding on cards for precision feel */
+
+/* Grid: tighter gaps, 3 columns on large screens */
+.grid.gap-10 {
+  gap: 1.25rem !important;
+}
+@media (min-width: 1024px) {
+  .grid.gap-10 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Card body: reduce padding and internal spacing */
+[role="article"] .p-8 {
+  padding: 1rem !important;
+}
+[role="article"] .space-y-4 > * + * {
+  margin-top: 0.5rem !important;
+}
+
+/* Card image: cap height so it doesn't dominate */
+[role="article"] [class*="aspect-"] {
+  max-height: 140px !important;
+  overflow: hidden;
+}
+
+/* Slightly reduce rounding for precision feel */
 [class*="rounded-xl"] { border-radius: 6px !important; }
 [class*="rounded-2xl"] { border-radius: 8px !important; }
 
