@@ -12,16 +12,17 @@ sections:
       title: Research
       subtitle: ''
       text: |-
-        I work on problems at the intersection of spacecraft autonomy and applied mathematics —
-        specifically how satellites and multi-agent space systems can make principled decisions
-        in adversarial, uncertain, and dynamically constrained environments.
+        My research is in nonlinear dynamical systems and the control of agents within such systems.
+        The problems I find most compelling sit at the boundary of what is mathematically tractable
+        and what is physically meaningful — trajectory optimization under chaotic dynamics, autonomous
+        proximity operations where interacting boundary layers or gravitational flows make classical
+        methods fragile, and multi-agent systems that must act safely under uncertainty.
 
-        My work draws from differential game theory, stochastic analysis, and computational
-        astrodynamics. A recurring thread is developing algorithms that are tractable enough
-        to run onboard while being rigorous enough to provide formal guarantees.
-
-        [Update this with your specific research statement. Be concrete — name the mission
-        context, the mathematical tools, and the payoff.]
+        Concretely, this means work in stochastic trajectory optimization, differential game theory
+        for spacecraft pursuit-evasion and cooperative maneuvering, nonlinear system identification,
+        and computational astrodynamics. Application domains include cislunar space operations,
+        very low Earth orbit (VLEO) satellite maintenance, and — from earlier work — the long-term
+        stability of compact planetary systems.
     design:
       columns: '1'
 
@@ -43,14 +44,15 @@ sections:
       title: Differential Game Theory
       subtitle: ''
       text: |-
-        Differential games provide a framework for reasoning about multi-agent systems where
-        each agent optimizes a continuous-time objective subject to dynamics and the actions
-        of others. In the spacecraft context, this captures pursuit-evasion, resource
-        competition, and cooperative maneuver planning where objectives are in tension.
+        Differential games formalize multi-agent problems where each agent optimizes a
+        continuous-time objective subject to shared dynamics and the decisions of others.
+        In the spacecraft context this captures pursuit-evasion scenarios, contested
+        proximity operations, and cooperative rendezvous where the objectives of different
+        agents are in tension.
 
-        My work here focuses on [specific problem — e.g. saddle-point characterization for
-        orbital pursuit-evasion, scalable Nash equilibrium computation, Hamilton-Jacobi
-        reachability for safety guarantees].
+        My PhD work develops theory and algorithms for these settings — focusing on
+        tractable solution methods that scale to the dynamics and constraints encountered
+        in cislunar and low-Earth-orbit environments.
     design:
       columns: '1'
 
@@ -70,14 +72,12 @@ sections:
       title: Computational Astrodynamics
       subtitle: ''
       text: |-
-        Astrodynamics provides the physical substrate for all of the above — the equations
-        of motion, perturbation models, and orbital mechanics that constrain what spacecraft
-        can actually do. Computational approaches let us scale classical results to higher-
-        fidelity models and larger constellations.
-
-        My work here includes [specific problem — e.g. N-body simulations for system
-        lifetime estimation, relative motion for proximity operations, trajectory
-        optimization under perturbations].
+        My astrodynamics work spans two threads. During my time at AFRL, I focused on
+        cislunar rendezvous — developing efficient trajectory generation methods for
+        autonomous deputy-chief spacecraft operations, and building spacecraft modeling
+        and control libraries in Julia. Earlier, at NASA Ames, I investigated the
+        long-term stability of compact planetary systems using high-throughput N-body
+        simulations, which led to three forthcoming journal publications.
     design:
       columns: '1'
 

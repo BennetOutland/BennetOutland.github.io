@@ -11,7 +11,7 @@ name:
 postnominals:
   - "MS"
 role: "Graduate Researcher"
-bio: "Bennet Outland is a doctoral student at the University of Colorado Boulder in the Smead Department of Aerospace Engineering Sciences. His research interests are in Differential Game Theory, Safe Multi-agent Systems, and Computational Astrodynamics."
+bio: "Doctoral student at the University of Colorado Boulder, Smead Department of Aerospace Engineering Sciences. Research in differential game theory, safe multi-agent systems, and computational astrodynamics — with a focus on algorithms that are tractable enough to run onboard while providing formal guarantees."
 affiliations:
   - name: "University of Colorado Boulder"
     url: ""
@@ -29,23 +29,92 @@ interests:
 education:
   - degree: "PhD in Aerospace Engineering Sciences"
     institution: "University of Colorado Boulder"
-    start: "2025"
-    end: "Present"
+    start: "2025-08-01"
+    end: null
     summary: ""
   - degree: "MS in Computer Science and Engineering"
     institution: "South Dakota Mines"
-    start: ""
-    end: "2025"
-    summary: ""
-  - degree: "BS in Mechanical Engineering"
+    start: "2023-08-01"
+    end: "2025-05-01"
+    summary: "Thesis: Autonomous Cislunar Rendezvous: Efficient Trajectory Generation and Computation. GPA: 4.00. Advisor: Dr. Alexander Soderlund (AFRL-RVSW)."
+  - degree: "BS in Mechanical Engineering — Summa Cum Laude"
     institution: "South Dakota Mines"
-    start: ""
-    end: "2024"
-    summary: ""
-experience: []
-skills: []
+    start: "2020-08-01"
+    end: "2024-05-01"
+    summary: "Capstone: Spacecraft Simulation via Omnicopter Dynamics. GPA: 3.92."
+experience:
+  - role: "SMART Scholar"
+    org: "Air Force Research Laboratory — AFRL/RVSW"
+    start: "2023-01-01"
+    summary: |
+      Pursuing research in cislunar autonomous rendezvous, proximity operations, and docking (ARPOD). Developed a novel algorithm for debris detection from a satellite constellation, built a spacecraft modeling and control library in Julia, and designed low-cost cislunar rendezvous trajectories. Work spans data-driven control, astrodynamics, state estimation, and cyber security for space systems.
+  - role: "Researcher"
+    org: "Naval Engineering Education Consortium / Naval Undersea Warfare Center — SD Mines"
+    start: "2022-01-01"
+    end: "2024-05-01"
+    summary: |
+      Environment mapping under information sparsity. Developed metrics for agent exploration performance, benchmarked state estimation algorithms, and created an algorithm for autonomous exploration of unknown cave environments.
+  - role: "Researcher"
+    org: "NASA Ames Research Center — Orbital Dynamics"
+    start: "2019-01-01"
+    summary: |
+      Investigating the theoretical lifetimes of compact planetary systems analogous to those observed by Kepler and TESS. Developed a multiprocessing N-body simulation pipeline using the Rebound package. Resulted in four conference presentations and forthcoming journal publications.
+  - role: "Graduate Teaching Assistant"
+    org: "South Dakota Mines"
+    start: "2023-08-01"
+    end: "2025-05-01"
+    summary: |
+      TA for Programming for Engineers and Scientists (CSC 115 and CSC 170). Ran help sessions, wrote exam questions, and graded assignments.
+skills:
+  - name: Programming
+    items:
+      - label: Python
+        level: 5
+      - label: Julia
+        level: 5
+      - label: C++
+        level: 5
+      - label: MATLAB
+        level: 4
+      - label: C
+        level: 4
+  - name: Tools & Frameworks
+    items:
+      - label: Basilisk
+        level: 4
+      - label: Rebound
+        level: 5
+      - label: ROS
+        level: 4
+      - label: PyTorch / Flux.jl
+        level: 4
+      - label: SciML Suite
+        level: 4
 languages:
   - name: "English"
     level: 5
     label: "Native"
-awards: []
+  - name: "Spanish"
+    level: 3
+    label: "Intermediate"
+awards:
+  - title: "DoD SMART Scholarship for Service"
+    awarder: "Department of Defense"
+    date: "2022-01-01"
+    summary: "~$98,000 award for pursuing a BS in Mechanical Engineering, with a ~$45,000 extension for the MS in Computer Science and Engineering."
+    icon: "hero/trophy"
+  - title: "Outstanding Senior Award"
+    awarder: "South Dakota Mines"
+    date: "2024-05-01"
+    summary: "Two-time recipient (2023, 2024)."
+    icon: "hero/academic-cap"
+  - title: "Senior Design CRADA"
+    awarder: "Air Force Research Laboratory"
+    date: "2023-09-01"
+    summary: "$5,000 award for the development of a customizable omnicopter and novel control algorithm."
+    icon: "hero/trophy"
+  - title: "Tau Beta Pi"
+    awarder: "South Dakota Alpha Chapter"
+    date: "2023-01-01"
+    summary: "National engineering honor society."
+    icon: "hero/academic-cap"
