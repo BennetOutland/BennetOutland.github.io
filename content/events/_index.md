@@ -2,8 +2,6 @@
 title: Talks & Presentations
 type: landing
 
-design:
-  spacing: '2rem'
 
 sections:
 

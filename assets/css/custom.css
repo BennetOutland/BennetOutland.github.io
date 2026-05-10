@@ -100,36 +100,24 @@ section, main, header, footer, nav {
 }
 
 /* --- Whitespace reduction ----------------------------------- */
-/* HugoBlox's default block padding is generous; pull it in. */
 
-/* Top-level section vertical padding */
-section.hb-section,
-[class*="py-16"],
-[class*="py-20"],
-[class*="py-24"] {
+/* Squeeze all block sections — this catches whatever Tailwind py-* class
+   HugoBlox happens to apply at build time */
+section {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+/* The bio/hero block gets a little more room */
+section:first-of-type {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
 }
 
-/* First section (hero/bio) — less top padding since nav is above it */
-section:first-of-type {
-  padding-top: 1rem !important;
-}
-
-/* Block inner containers */
-[class*="mx-auto"][class*="max-w"] {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-/* Reduce the gap between section heading and its content */
-.hb-section > * + * {
-  margin-top: 1rem;
-}
-
-/* Tighten h2 top margin in content blocks */
-section h2 {
-  margin-top: 0.5rem;
+/* Kill any extra top/bottom margin on the block's inner container */
+section > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /* --- Section titles ----------------------------------------- */
