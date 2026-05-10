@@ -1,0 +1,169 @@
+/* =============================================================
+   PRECISION ORBITAL — Custom theme for bennetoutland.github.io
+   Aerospace autonomy & astrodynamics
+   ============================================================= */
+
+/* --- Fonts -------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Headings: Space Grotesk — geometric, technical, human */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+h1 { font-weight: 600; letter-spacing: -0.035em; }
+h2 { font-weight: 600; letter-spacing: -0.03em; }
+
+/* Code and technical inline content */
+code, kbd, samp, pre, .font-mono {
+  font-family: 'Space Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.875em;
+}
+
+/* Navigation links */
+nav a, .navbar a {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --- Orbital ring decorations ------------------------------- */
+/*
+   Three concentric arcs, partially off-screen in the upper-right,
+   suggesting orbital paths. Extremely subtle in light mode,
+   more visible in dark mode.
+*/
+.orbital-rings {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orbital-rings__ring {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: transparent;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+}
+
+/* Ring 1: smallest, most visible */
+.orbital-rings__ring:nth-child(1) {
+  width: clamp(320px, 40vw, 560px);
+  height: clamp(320px, 40vw, 560px);
+  border-width: 1px;
+  border-color: rgba(56, 189, 248, 0.12); /* sky-400 */
+}
+
+/* Ring 2: medium */
+.orbital-rings__ring:nth-child(2) {
+  width: clamp(560px, 65vw, 900px);
+  height: clamp(560px, 65vw, 900px);
+  border-width: 1px;
+  border-color: rgba(56, 189, 248, 0.07);
+}
+
+/* Ring 3: largest, subtlest */
+.orbital-rings__ring:nth-child(3) {
+  width: clamp(800px, 90vw, 1300px);
+  height: clamp(800px, 90vw, 1300px);
+  border-width: 1px;
+  border-color: rgba(56, 189, 248, 0.04);
+}
+
+/* Dark mode: rings more pronounced against dark background */
+.dark .orbital-rings__ring:nth-child(1) {
+  border-color: rgba(56, 189, 248, 0.18);
+}
+.dark .orbital-rings__ring:nth-child(2) {
+  border-color: rgba(56, 189, 248, 0.11);
+}
+.dark .orbital-rings__ring:nth-child(3) {
+  border-color: rgba(56, 189, 248, 0.06);
+}
+
+/* All page sections sit above the rings */
+section, main, header, footer, nav {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Section titles ----------------------------------------- */
+/* Clean rule under section headings */
+section h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.2); /* slate-500 subtle */
+  margin-bottom: 1.5rem;
+}
+
+.dark section h2 {
+  border-bottom-color: rgba(148, 163, 184, 0.15); /* slate-400 subtle */
+}
+
+/* --- Links --------------------------------------------------- */
+a:not([class]) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* --- Cards --------------------------------------------------- */
+/* Slightly reduce default rounding on cards for precision feel */
+[class*="rounded-xl"] { border-radius: 6px !important; }
+[class*="rounded-2xl"] { border-radius: 8px !important; }
+
+/* --- Biography block ---------------------------------------- */
+/* Tighten the name display slightly */
+[data-block="resume-biography-3"] h1 {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+/* Role/position text below name */
+[data-block="resume-biography-3"] .role {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* --- Publication list --------------------------------------- */
+/* Journal/venue names in a slightly muted style */
+.publication-venue,
+.article-metadata {
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  opacity: 0.75;
+}
+
+/* --- Footer ------------------------------------------------- */
+footer {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  opacity: 0.65;
+}
+
+/* --- Light mode adjustments --------------------------------- */
+/* Hero gradient mesh — nudge toward cooler tones */
+:root {
+  --tw-prose-links: theme('colors.sky.600');
+}
+
+/* --- Dark mode adjustments ---------------------------------- */
+.dark {
+  --tw-prose-links: theme('colors.sky.400');
+}
+
+/* Slightly soften pure white text in dark mode for easier reading */
+.dark body {
+  color: rgba(226, 232, 240, 0.92); /* slate-200 at 92% */
+}
