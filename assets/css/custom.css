@@ -99,6 +99,30 @@ section, main, header, footer, nav {
   z-index: 1;
 }
 
+/* --- Nav hover-reveal --------------------------------------- */
+/*
+   The site name stays visible at all times.
+   Nav links, search, and theme toggle fade in on header hover/focus.
+*/
+header nav,
+header [class*="navbar-end"],
+header [class*="header-end"],
+header [class*="ml-auto"] > *:not([href="/"]):not([aria-label="home"]) {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+header:hover nav,
+header:focus-within nav,
+header:hover [class*="navbar-end"],
+header:focus-within [class*="navbar-end"],
+header:hover [class*="header-end"],
+header:focus-within [class*="header-end"],
+header:hover [class*="ml-auto"] > *,
+header:focus-within [class*="ml-auto"] > * {
+  opacity: 1;
+}
+
 /* --- Section titles ----------------------------------------- */
 /* Clean rule under section headings */
 section h2 {
