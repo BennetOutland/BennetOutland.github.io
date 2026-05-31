@@ -8,6 +8,7 @@ authors:
 date: "2024-06-01T00:00:00Z"
 publishDate: "2024-06-01T00:00:00Z"
 publication_types: ["article-journal"]
+forthcoming: true
 publication: "In preparation"
 publication_short: ""
 abstract: "Analyzing the lifetimes of planetary systems with many planets, challenging the conventional assumption that stability behavior converges for large planet numbers."

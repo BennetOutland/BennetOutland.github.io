@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Software
 date: 2024-05-19
 type: landing
 
@@ -8,10 +8,10 @@ sections:
 
   - block: markdown
     content:
-      title: Projects
+      title: Software
       subtitle: ''
       text: |-
-        Software, simulations, and side projects — things I've built to explore an idea or solve a concrete problem. Some are research tools; others are just interesting.
+        Here is some of the specific research software that I have built along the way that I hope will be useful to others. 
     design:
       columns: '1'
 
@@ -21,7 +21,7 @@ sections:
       count: 0
       filters:
         folders:
-          - projects
+          - software
     design:
       view: article-grid
       fill_image: false

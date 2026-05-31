@@ -11,7 +11,7 @@ name:
 postnominals:
   - "MS"
 role: "Graduate Researcher"
-bio: "Doctoral student at the University of Colorado Boulder, Smead Department of Aerospace Engineering Sciences. Research in differential game theory, safe multi-agent systems, and computational astrodynamics — with a focus on algorithms that are tractable enough to run onboard while providing formal guarantees."
+bio: "Outland is a doctoral student at the University of Colorado Boulder, Smead Department of Aerospace Engineering Sciences. His research is in differential game theory, safe multi-agent systems, and computational astrodynamics — with a focus on algorithms that are tractable enough to run onboard while providing formal guarantees."
 affiliations:
   - name: "University of Colorado Boulder"
     url: ""
@@ -40,70 +40,64 @@ education:
     institution: "South Dakota Mines"
     start: "2023-08-01"
     end: "2025-05-01"
-    summary: "Thesis: Autonomous Cislunar Rendezvous: Efficient Trajectory Generation and Computation. GPA: 4.00. Advisor: Dr. Alexander Soderlund (AFRL-RVSW)."
+    summary: "Thesis: Autonomous Cislunar Rendezvous: Efficient Trajectory Generation and Computation. Advisor: Dr. Alexander Soderlund (AFRL-RVSW)."
   - degree: "BS in Mechanical Engineering — Summa Cum Laude"
     institution: "South Dakota Mines"
     start: "2020-08-01"
     end: "2024-05-01"
-    summary: "Capstone: Spacecraft Simulation via Omnicopter Dynamics. GPA: 3.92."
+    summary: "Capstone: Spacecraft Simulation via Omnicopter Dynamics."
 experience:
   - role: "SMART Scholar"
     org: "Air Force Research Laboratory — AFRL/RVSW"
     start: "2023-01-01"
-    summary: |
-      Pursuing research in cislunar autonomous rendezvous, proximity operations, and docking (ARPOD). Developed a novel algorithm for debris detection from a satellite constellation, built a spacecraft modeling and control library in Julia, and designed low-cost cislunar rendezvous trajectories. Work spans data-driven control, astrodynamics, state estimation, and cyber security for space systems.
+    summary: "Pursuing research in cislunar autonomous rendezvous, proximity operations, and docking (ARPOD). Developed a novel algorithm for debris detection from a satellite constellation, built a spacecraft modeling and control library in Julia, and designed low-cost cislunar rendezvous trajectories. Work spans data-driven control, astrodynamics, state estimation, and cyber security for space systems.\n"
   - role: "Researcher"
     org: "Naval Engineering Education Consortium / Naval Undersea Warfare Center — SD Mines"
     start: "2022-01-01"
     end: "2024-05-01"
-    summary: |
-      Environment mapping under information sparsity. Developed metrics for agent exploration performance, benchmarked state estimation algorithms, and created an algorithm for autonomous exploration of unknown cave environments.
+    summary: "Environment mapping under information sparsity. Developed metrics for agent exploration performance, benchmarked state estimation algorithms, and created an algorithm for autonomous exploration of unknown cave environments.\n"
   - role: "Researcher"
     org: "NASA Ames Research Center — Orbital Dynamics"
     start: "2019-01-01"
-    summary: |
-      Investigating the theoretical lifetimes of compact planetary systems analogous to those observed by Kepler and TESS. Developed a multiprocessing N-body simulation pipeline using the Rebound package. Resulted in four conference presentations and forthcoming journal publications.
+    summary: "Investigating the theoretical lifetimes of compact planetary systems analogous to those observed by Kepler and TESS. Developed a multiprocessing N-body simulation pipeline using the Rebound package. Resulted in four conference presentations and forthcoming journal publications.\n"
   - role: "Graduate Teaching Assistant"
     org: "South Dakota Mines"
     start: "2023-08-01"
     end: "2025-05-01"
-    summary: |
-      TA for Programming for Engineers and Scientists (CSC 115 and CSC 170). Ran help sessions, wrote exam questions, and graded assignments.
+    summary: "TA for Programming for Engineers and Scientists (CSC 115 and CSC 170). Ran help sessions, wrote exam questions, and graded assignments.\n"
   - role: "Undergraduate Outreach"
     org: "Department Outreach — South Dakota Mines"
     start: "2022-01-01"
-    summary: |
-      Organized department admission events for the EECS Department. Created reinforcement learning control, deep computer vision, and autonomous vehicle demonstrations tailored for general audiences.
+    summary: "Organized department admission events for the EECS Department. Created reinforcement learning control, deep computer vision, and autonomous vehicle demonstrations tailored for general audiences.\n"
   - role: "Volunteer Summer Intern"
     org: "South Dakota Mines — Sanford Underground Research Facility (SURF)"
     start: "2018-06-01"
     end: "2019-08-01"
-    summary: |
-      Assisted in the development of Radon mitigation systems for SURF. Researched Radon content trapped on materials to reduce exposure to the LUX Dark Matter detector. Participated in clean room work and preparation to transport systems to SURF.
+    summary: "Assisted in the development of Radon mitigation systems for SURF. Researched Radon content trapped on materials to reduce exposure to the LUX Dark Matter detector. Participated in clean room work and preparation to transport systems to SURF.\n"
 skills:
-  - name: Programming
+  - name: "Programming"
     items:
-      - label: Python
+      - label: "Python"
         level: 5
-      - label: Julia
+      - label: "Julia"
         level: 5
-      - label: C++
+      - label: "C++"
         level: 5
-      - label: MATLAB
+      - label: "MATLAB"
         level: 4
-      - label: C
+      - label: "C"
         level: 4
-  - name: Tools & Frameworks
+  - name: "Tools & Frameworks"
     items:
-      - label: Basilisk
+      - label: "Basilisk"
         level: 4
-      - label: Rebound
+      - label: "Rebound"
         level: 5
-      - label: ROS
+      - label: "ROS"
         level: 4
-      - label: PyTorch / Flux.jl
+      - label: "PyTorch / Flux.jl"
         level: 4
-      - label: SciML Suite
+      - label: "SciML Suite"
         level: 4
 languages:
   - name: "English"
@@ -133,19 +127,7 @@ awards:
     date: "2023-01-01"
     summary: "National engineering honor society."
     icon: "hero/academic-cap"
-
-research_interests: >
-  My research interests are in nonlinear dynamical systems and the control of agents within such systems.
-  Some of the fundamental research challenges that I am interested in are: denoising diffusion control,
-  stochastic trajectory optimization, stability analysis, controlling objects in hypersonic rarefied flow,
-  performing autonomous proximity operations with interacting fluid boundary layers or under chaotic dynamics,
-  system identification for feedback control systems, and explainable nonlinear controllers. Specifically,
-  this can be applied to cases of chaotic gravitational flow fields, such as cislunar space, combined drag
-  and gravitational effects of spacecraft in very low Earth orbit (VLEO), and the control of unmanned
-  undersea vehicles (UUVs) in turbulent waters. I also have experience in deep computer vision and signal
-  processing for space situational awareness as well as general data analysis and simulation for
-  investigating the stability of planetary systems.
-
+research_interests: "My research interests are in nonlinear dynamical systems and the control of agents within such systems. Some of the fundamental research challenges that I am interested in are: denoising diffusion control, stochastic trajectory optimization, stability analysis, controlling objects in hypersonic rarefied flow, performing autonomous proximity operations with interacting fluid boundary layers or under chaotic dynamics, system identification for feedback control systems, and explainable nonlinear controllers. Specifically, this can be applied to cases of chaotic gravitational flow fields, such as cislunar space, combined drag and gravitational effects of spacecraft in very low Earth orbit (VLEO), and the control of unmanned undersea vehicles (UUVs) in turbulent waters. I also have experience in deep computer vision and signal processing for space situational awareness as well as general data analysis and simulation for investigating the stability of planetary systems.\n"
 honors:
   - title: "Outstanding Senior Award"
     subtitle: "Second Year Recipient"
@@ -162,8 +144,10 @@ honors:
   - title: "National Society of Leadership and Success"
     subtitle: "Member"
     date: "2022–Current"
-
 awards_cv:
+  - title: "DoD SMART Scholarship for Service"
+    subtitle: "≈ $430,000 Award for pursuing a PhD in Aerospace Engineering Sciences"
+    date: "2025"
   - title: "Senior Design CRADA"
     subtitle: "$5,000 for the development of a customizable omnicopter, report with theoretical underpinnings, and design of a novel control algorithm."
     date: "2023–2024"
@@ -173,7 +157,6 @@ awards_cv:
   - title: "DoD SMART Scholarship for Service"
     subtitle: "≈ $98,000 Award for pursuing a Bachelor of Science in Mechanical Engineering"
     date: "2022"
-
 academic_service:
   - title: "ME Faculty Search Committee"
     org: "South Dakota Mines"
@@ -190,7 +173,6 @@ academic_service:
       - "Volunteered and helped coordinate admission events for the Electrical Engineering and Computer Science department"
       - "Assisted in or gave demonstrations on computer vision and reinforcement learning"
       - "Hired afterward to plan and occasionally execute these events as well as create new demonstrations"
-
 teaching:
   - role: "Graduate Teaching Assistant"
     org: "South Dakota Mines"
@@ -203,7 +185,6 @@ teaching:
     date: "2023–Current"
     bullets:
       - "Assisting in teaching/mentoring a student in programming, data analysis, data visualization, and astrodynamics"
-
 teaching_interests:
   - "Dynamics"
   - "Numerical Analysis"
@@ -211,7 +192,6 @@ teaching_interests:
   - "Spaceflight Mechanics"
   - "Dynamic Systems"
   - "Programming for Engineers"
-
 courses:
   - "Mechatronics"
   - "Space Flight Mechanics"
@@ -233,7 +213,6 @@ courses:
   - "Tensor Calculus *"
   - "Survey of Neural Networks"
   - "Functional Analysis *"
-
 skills_cv:
   - category: "Programming (Advanced)"
     items: "Python, Julia, C++"

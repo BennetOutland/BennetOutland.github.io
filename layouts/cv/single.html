@@ -19,7 +19,7 @@
 {{ $me := index hugo.Data.authors "me" }}
 {{ $pubs     := (where site.Pages "Section" "publications").ByDate.Reverse }}
 {{ $events   := (where site.Pages "Section" "events").ByDate.Reverse }}
-{{ $projects := (where site.Pages "Section" "projects").ByDate.Reverse }}
+{{ $projects := (where (where site.Pages "Section" "projects") "Kind" "page").ByDate.Reverse }}
 
 {{/* Split events into forthcoming (future) and past */}}
 {{ $forthcoming_talks := slice }}
@@ -39,7 +39,6 @@
   <div class="cv-contact">
     {{ with $me.website }}<a href="{{ . }}">{{ . | strings.TrimPrefix "https://" }}</a><span>|</span>{{ end }}
     {{ with $me.github }}<a href="{{ . }}">{{ . | strings.TrimPrefix "https://github.com/" | printf "github.com/%s" }}</a><span>|</span>{{ end }}
-    {{ with $me.linkedin }}<a href="{{ . }}">{{ . | strings.TrimPrefix "https://www.linkedin.com/in/" | printf "linkedin.com/in/%s" }}</a><span>|</span>{{ end }}
     {{ with $me.scholar }}<a href="{{ . }}">Google Scholar</a>{{ end }}
   </div>
 
@@ -61,13 +60,30 @@
   {{ end }}
 
   {{/* ── Research Interests ───────────────── */}}
+  {{/* Edit research_interests in content/cv/index.md frontmatter */}}
+  {{ with .Params.research_interests }}
   <h2>Research Interests</h2>
-  <p class="cv-paragraph">{{ $me.research_interests }}</p>
+  <p class="cv-paragraph">{{ . }}</p>
+  {{ end }}
+
+  {{/* ── Split pubs by type and forthcoming flag ── */}}
+  {{/* Set forthcoming: true in a pub's frontmatter to move it to the Forthcoming section */}}
+  {{ $journal_pubs      := slice }}
+  {{ $conf_pubs         := slice }}
+  {{ $forthcoming_pubs  := slice }}
+  {{ range $pubs }}
+    {{ if .Params.forthcoming }}
+      {{ $forthcoming_pubs = $forthcoming_pubs | append . }}
+    {{ else if .Params.publication_types | intersect (slice "article-journal") }}
+      {{ $journal_pubs = $journal_pubs | append . }}
+    {{ else if .Params.publication_types | intersect (slice "paper-conference") }}
+      {{ $conf_pubs = $conf_pubs | append . }}
+    {{ end }}
+  {{ end }}
 
   {{/* ── Journal Publications ─────────────── */}}
-  {{ $journal_pubs := where $pubs "Params.publication_types" "intersect" (slice "article-journal") }}
   {{ if $journal_pubs }}
-  <h2>Forthcoming Journal Publications</h2>
+  <h2>Journal Publications</h2>
   {{ range $journal_pubs }}
   <div class="cv-entry">
     <div class="cv-row">
@@ -82,9 +98,40 @@
   {{ end }}
   {{ end }}
 
-  {{/* ── Forthcoming Conference Publications ─ */}}
-  {{ if $forthcoming_talks }}
-  <h2>Forthcoming Conference Publications</h2>
+  {{/* ── Conference Publications ──────────── */}}
+  {{/* Add publication_types: ["paper-conference"] to a pub to list it here */}}
+  {{ if $conf_pubs }}
+  <h2>Conference Publications</h2>
+  {{ range $conf_pubs }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .Title }}</span>
+      <span class="cv-date">{{ with .Params.publication }}{{ . | markdownify }}{{ else }}{{ .Date.Format "2006" }}{{ end }}</span>
+    </div>
+    <div class="cv-institution">
+      {{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<strong>B Outland</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
+    </div>
+    {{ with .Params.abstract }}<ul><li>{{ . }}</li></ul>{{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* ── Forthcoming Publications ─────────── */}}
+  {{ $forthcoming_all := $forthcoming_pubs | append $forthcoming_talks }}
+  {{ if $forthcoming_all }}
+  <h2>Forthcoming Publications</h2>
+  {{ range $forthcoming_pubs }}
+  <div class="cv-entry">
+    <div class="cv-row">
+      <span class="cv-title">{{ .Title }}</span>
+      <span class="cv-date">{{ with .Params.publication }}{{ . | markdownify }}{{ end }}</span>
+    </div>
+    <div class="cv-institution">
+      {{ range $i, $a := .Params.authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<strong>B Outland</strong>{{ else }}{{ $a }}{{ end }}{{ end }}
+    </div>
+    {{ with .Params.abstract }}<ul><li>{{ . }}</li></ul>{{ end }}
+  </div>
+  {{ end }}
   {{ range $forthcoming_talks }}
   <div class="cv-entry">
     <div class="cv-row">
@@ -229,16 +276,7 @@
   </ul>
   {{ end }}
 
-  {{/* ── Courses ──────────────────────────── */}}
-  {{ with $me.courses }}
-  <h2>Courses and Topics</h2>
-  <ul class="cv-two-col">
-    {{ range . }}<li>{{ . }}</li>{{ end }}
-  </ul>
-  <p style="font-size:0.82rem;color:#666;margin-top:0.3rem;">* In Progress</p>
-  {{ end }}
-
-  {{/* ── Skills ───────────────────────────── */}}
+{{/* ── Skills ───────────────────────────── */}}
   {{ with $me.skills_cv }}
   <h2>Skills</h2>
   <table class="cv-skills">

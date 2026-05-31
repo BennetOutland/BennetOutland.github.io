@@ -1,5 +1,5 @@
 ---
-title: Updates
+title: Blog
 type: landing
 
 
@@ -7,7 +7,7 @@ sections:
 
   - block: markdown
     content:
-      title: Updates
+      title: Blog
       subtitle: ''
       text: |-
         Notes on research, readings, and whatever else seems worth writing down.
