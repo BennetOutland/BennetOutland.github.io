@@ -1,6 +1,6 @@
 ---
 title: "Orbital Stability of Compact Four-Planet Systems"
-event: "American Astronomical Society — Division of Planetary Sciences Meeting"
+event: "American Astronomical Society, Division of Planetary Sciences Meeting"
 event_url: ""
 location: ""
 summary: "Updated systematic study of four-planet systems including details about lifetime phase shifting."

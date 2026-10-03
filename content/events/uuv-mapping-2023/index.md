@@ -1,6 +1,6 @@
 ---
 title: "UUV Self-Localization and Intelligent Mapping"
-event: "Naval Engineering Education Consortium — Naval Undersea Warfare Center"
+event: "Naval Engineering Education Consortium, Naval Undersea Warfare Center"
 event_url: ""
 location: ""
 summary: "Presentation on robust autonomous mapping and the evaluation of mapping algorithm performance for unmanned undersea vehicles."

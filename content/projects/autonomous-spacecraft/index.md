@@ -1,6 +1,6 @@
 ---
 title: "Autonomous Spacecraft and Sensing"
-summary: "Simulation of a LEO satellite with autonomous debris avoidance, optical debris detection, attitude correction, and cyber-attack resilience — built in the Basilisk simulator."
+summary: "Simulation of a LEO satellite with autonomous debris avoidance, optical debris detection, attitude correction, and cyber-attack resilience, built in the Basilisk simulator."
 tags:
   - spacecraft
   - autonomy

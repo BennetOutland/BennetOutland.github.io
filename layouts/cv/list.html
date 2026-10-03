@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bennet Outland — Curriculum Vitae</title>
+  <title>Bennet Outland - Curriculum Vitae</title>
   {{ $css := resources.Get "css/cv.css" }}
   {{ with $css }}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +13,13 @@
 
 <div class="cv-toolbar no-print">
   <a class="cv-back" href="/">← Back to site</a>
+  <a class="cv-back" href="/cv/short/">Short CV</a>
   <button class="cv-print-btn" onclick="window.print()">⬇ Save as PDF</button>
 </div>
 
 {{ $me := index hugo.Data.authors "me" }}
 {{ $pubs     := (where site.Pages "Section" "publications").ByDate.Reverse }}
-{{ $events   := (where site.Pages "Section" "events").ByDate.Reverse }}
+{{ $events   := (where (where site.Pages "Section" "events") "Kind" "page").ByDate.Reverse }}
 {{ $projects := (where (where site.Pages "Section" "projects") "Kind" "page").ByDate.Reverse }}
 
 {{/* Split events into forthcoming (future) and past */}}
@@ -268,15 +269,7 @@
   {{ end }}
   {{ end }}
 
-  {{/* ── Teaching Interests ───────────────── */}}
-  {{ with $me.teaching_interests }}
-  <h2>Teaching Interests</h2>
-  <ul class="cv-two-col">
-    {{ range . }}<li>{{ . }}</li>{{ end }}
-  </ul>
-  {{ end }}
-
-{{/* ── Skills ───────────────────────────── */}}
+  {{/* ── Skills ───────────────────────────── */}}
   {{ with $me.skills_cv }}
   <h2>Skills</h2>
   <table class="cv-skills">

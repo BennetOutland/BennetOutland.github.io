@@ -1,6 +1,6 @@
 ---
 title: "Deep Computer Vision Demonstration"
-summary: "Introductory deep computer vision demo for general audiences — live object detection and neural style transfer via CNN."
+summary: "Introductory deep computer vision demo for general audiences, live object detection and neural style transfer via CNN."
 tags:
   - computer-vision
   - machine-learning

@@ -1,6 +1,6 @@
 ---
 title: "Dependence of Lifetimes of Closely-Spaced Planetary Systems on Number of Planets"
-event: "American Astronomical Society — Division of Planetary Sciences Meeting"
+event: "American Astronomical Society, Division of Planetary Sciences Meeting"
 event_url: ""
 location: ""
 summary: "How stability characteristics change as more planets are added to compact systems."

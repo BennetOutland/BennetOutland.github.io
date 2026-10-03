@@ -1,6 +1,6 @@
 ---
 title: "Trebuchet Competition"
-summary: "Model identification and regression for optimal trebuchet performance — part of Rocker Robotics competition team activities."
+summary: "Model identification and regression for optimal trebuchet performance, part of Rocker Robotics competition team activities."
 tags:
   - control
   - robotics

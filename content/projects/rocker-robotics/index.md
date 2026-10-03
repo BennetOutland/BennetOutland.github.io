@@ -1,5 +1,5 @@
 ---
-title: "Rocker Robotics — Intelligent Ground Vehicle Competition"
+title: "Rocker Robotics: Intelligent Ground Vehicle Competition"
 summary: "Autonomy and Controls Tech Lead for SD Mines' IGVC entry. Won Rookie of the Year. Implemented MPPI control, A* path planning, and frontier-based autonomous exploration."
 tags:
   - autonomy

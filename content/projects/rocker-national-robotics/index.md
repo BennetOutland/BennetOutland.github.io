@@ -1,6 +1,6 @@
 ---
-title: "Rocker Robotics — National Robotics Challenge"
-summary: "Computer Science Technical Lead for an autonomous vehicle challenge entry — computer vision, high-fidelity simulation, and RL control."
+title: "Rocker Robotics: National Robotics Challenge"
+summary: "Computer Science Technical Lead for an autonomous vehicle challenge entry, computer vision, high-fidelity simulation, and RL control."
 tags:
   - robotics
   - computer-vision

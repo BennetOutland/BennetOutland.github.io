@@ -256,7 +256,46 @@
   .cv-refs      { page-break-inside: avoid; }
 
   @page {
-    margin: 0.65in 0.75in;
+    margin: 0.45in 0.75in;
     size: letter portrait;
+  }
+
+  /* Tighter rhythm for the short (2-page) CV */
+  .cv-body.cv-short {
+    font-size: 8.8pt;
+    line-height: 1.28;
+  }
+
+  .cv-body.cv-short .cv-paper h2 {
+    margin: 0.6rem 0 0.25rem;
+  }
+
+  .cv-body.cv-short .cv-entry {
+    margin-bottom: 0.26rem;
+  }
+
+  .cv-body.cv-short .cv-honors .cv-entry {
+    margin-bottom: 0.1rem;
+  }
+
+  .cv-body.cv-short .cv-entry ul {
+    margin-top: 0.1rem;
+  }
+
+  .cv-body.cv-short .cv-paragraph {
+    line-height: 1.4;
+  }
+
+  .cv-body.cv-short .cv-name {
+    font-size: 2.2rem;
+  }
+
+  .cv-body.cv-short .cv-contact {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .cv-body.cv-short .cv-paper {
+    padding-top: 0;
   }
 }

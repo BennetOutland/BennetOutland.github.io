@@ -1,0 +1,73 @@
+# Periodically check Google Scholar for new publications and open a PR
+# with any new content/publications/<slug>/index.md pages it finds.
+#
+# This never pushes to main directly: Scholar's scraped metadata (and the
+# journal-vs-conference guess the script makes for bare arXiv preprints,
+# see scripts/sync_scholar.py) needs a human glance before it goes live.
+name: Sync Publications From Google Scholar
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  schedule:
+    # Mondays at 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: sync-scholar-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run Scholar sync
+        run: python scripts/sync_scholar.py
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'feat(publications): sync new publications from Google Scholar'
+          title: 'Sync new publications from Google Scholar'
+          body: |
+            🔄 **Automated Google Scholar Sync**
+
+            This PR was opened by `scripts/sync_scholar.py` after finding publications
+            on [Google Scholar](https://scholar.google.com/citations?user=PX-zoAMAAAAJ)
+            that don't yet have a page under `content/publications/`.
+
+            **Before merging, please check each new page for:**
+            - Correct `publication_types` (journal vs. conference) -- bare arXiv
+              preprints default to `article-journal` + `forthcoming: true` since
+              Scholar doesn't say where a paper is headed.
+            - Author name formatting and co-author order.
+            - Abstract/summary wording.
+          base: main
+          labels: automated-pr, content, publications
+          branch: sync-scholar-publications
+          delete-branch: true
+          draft: false
+
+      - name: Check outputs
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          echo "✅ Opened PR #${{ steps.cpr.outputs.pull-request-number }}"
+          echo "🔗 ${{ steps.cpr.outputs.pull-request-url }}"
